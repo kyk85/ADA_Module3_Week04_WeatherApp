@@ -2,5 +2,7 @@
   "name": "weathermap",
   "app_id": "84bc1494",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {
+    "cordova": {}
+  }
 }

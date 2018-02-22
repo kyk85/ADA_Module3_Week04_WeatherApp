@@ -7,5 +7,20 @@
 </ion-header>
 
 <ion-content padding>
+    <ion-list *ngIf="data">
+      <h2>10-day Weather Forecast for {{data.city.name}}</h2>
+      <ion-item *ngFor="let forecast of forecasts">
+          <ion-avatar item-start>
+              <img src="https://openweathermap.org/img/w/{{forecast?.weather[0].icon}}.png">
+              <p>{{forecast?.weather[0].main}}</p>
+          </ion-avatar>
+          <p>{{forecast?.dt *1000 | date: 'EEEE'}} - {{forecast?.dt *1000 | date }}</p>
+          <p>Temperature: {{forecast?.temp.min-273.15 | number:'2.2-2'}} Min, {{forecast?.temp.max-273.15 | number:'2.2-2'}} Max</p>
+          <p>Humidity: {{forecast?.humidity}}</p>
+        
+      </ion-item>
+    </ion-list>
 
 </ion-content>
+
+
